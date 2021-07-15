@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+
+/* COLORS */
+
+/* PRIMARY COLORS */
+
+--clr-primary-red: hsl(0, 78%, 62%);
+--clr-primary-cyan: hsl(180, 62%, 55%);
+--clr-primary-orange: hsl(34, 97%, 64%);
+--clr-primary-blue: hsl(212, 86%, 64%);
+
+/* NEUTRAL COLORS */
+
+--clr-neutral-gray-100: hsl(0, 0%, 98%);
+--clr-neutral-gray-300: hsl(229, 6%, 66%);
+--clr-neutral-gray-700: hsl(234, 12%, 34%);
+
+/* FONTS */
+
+--ff-main: 'Poppins', sans-serif;
+
+}
+
+/* GENERAL STYLES */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-neutral-gray-100);
+  font-size: 15px;
+  font-family: var(--ff-main);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* HERO SECTION */
+
+.hero {
+  color: var(--clr-neutral-gray-700);
+  text-align: center;
+  margin: 2.5em 2.5em 4.9em 2.5em;
+  animation: load-animation .75s ease-in;
+  animation-fill-mode: forwards;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.hero__title {
+  font-size: 1.5rem;
+}
+
+.normal {
+  font-weight: 200;
+}
+
+.hero__body {
+  color: var(--clr-neutral-gray-300);
+  font-size: .96rem;
+  line-height: 1.65;
+  margin-top: 1em;
+}
+
+/* CARDS SECTION */
+
+.cards {
+  display: grid;
+  gap: 1.7em;
+  margin-inline: 2em;
+  margin-block: 2em 3.5em;
+}
+
+.card {
+  padding: 1.5em 2em 7.7em 2em;
+  border-radius: 5px;
+  box-shadow: 0 7px 18px rgba(97, 98, 158, 0.3);
+  position: relative;
+  min-width: 250px;
+  animation: load-animation .75s ease-in 1s;
+  animation-fill-mode: forwards;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.card__title {
+  color: var(--clr-neutral-gray-700);
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.card__body {
+  color: var(--clr-neutral-gray-300);
+  font-size: .8rem;
+  line-height: 1.7;
+}
+
+.card img {
+  position: absolute;
+  right: 1.8em;
+  bottom: 1.8em;
+}
+
+.cyan {
+  border-top: 4px solid var(--clr-primary-cyan);
+}
+
+.red {
+  border-top: 4px solid var(--clr-primary-red);
+}
+
+.orange {
+  border-top: 4px solid var(--clr-primary-orange);
+}
+
+.blue {
+  border-top: 4px solid var(--clr-primary-blue);
+}
+
+/* KEYFRAMES */
+
+@keyframes load-animation {
+
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 500px) {
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 960px) {
+
+  .container {
+    max-width: 1230px;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+
+  .hero__body {
+    width: 50%;
+    font-size: 1rem;
+    margin: 0 auto;
+    padding-top: 1.5em;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "l t r"
+                         "l b r";
+                         gap: 2em;
+  }
+
+  .card {
+    min-height: 260px;
+  }
+
+  .cyan {
+    grid-area: l;
+    align-self: center;
+  }
+
+  .red {
+    grid-area: t;
+  }
+
+  .orange {
+    grid-area: b;
+  }
+
+  .blue {
+    grid-area: r;
+    align-self: center;
+  }
+
+  .card img {
+    right: 2.3em;
+    bottom: 2.3em;
+  }
+
+}
