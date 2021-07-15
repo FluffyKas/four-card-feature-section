@@ -72,8 +72,7 @@ body {
 .cards {
   display: grid;
   gap: 1.7em;
-  margin-inline: 2em;
-  margin-block: 2em 3.5em;
+  margin: 2em 2em 3.5em 2em;
 }
 
 .card {
